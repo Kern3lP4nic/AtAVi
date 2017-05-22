@@ -1,0 +1,3 @@
+[submodule "LambdaSkill"]
+	path = LambdaSkill
+	url = git@gitlab.com:kern3lp4nic/LambdaSkill.git

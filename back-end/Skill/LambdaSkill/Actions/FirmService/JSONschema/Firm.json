@@ -1,0 +1,28 @@
+{
+    "title":"firm",
+    "type":"object",
+    "properties":{
+        "name":{
+            "type":"string",
+            "pattern":"^[a-z0-9 ]{1,25}$"
+        },
+        "guests":{
+            "type": "array",
+            "items":{
+                    "anyOf":[{
+                    "type":"object",
+                    "properties":{
+                        "nameg":{
+                            "type":"string",
+                            "pattern":"^[a-z0-9 ]{1,25}$"
+                        }
+                    },
+                    "additionalProperties": false,
+                    "required":["nameg"]
+                }]
+            }
+        }
+    },
+    "additionalProperties": false,
+    "required":["name","guests"]
+}

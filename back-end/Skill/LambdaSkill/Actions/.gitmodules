@@ -1,0 +1,7 @@
+
+[submodule "ActionsModules/MessageSlack"]
+	path = ActionsModules/MessageSlack
+	url = git@gitlab.com:kern3lp4nic/MessageSlack.git
+[submodule "FirmService"]
+	path = FirmService
+	url = git@gitlab.com:kern3lp4nic/firmservice.git

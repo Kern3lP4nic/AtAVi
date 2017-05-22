@@ -1,0 +1,19 @@
+<div class="row">
+
+    <div class="col-md-4 col-md-offset-1">
+        <app-listview #allList [items]="interlocutors" [secondColumnVisibility]="false" (click)="allListClicked()" (emitter)="onSelectItem($event)"></app-listview>
+    </div>
+
+    <div class="col-md-2">
+        <div class="col-md-6 col-md-offset-3">
+            <button type="button" class="btn btn-default" (click)="refreshInterlocutor()">Refresh</button>
+            <button type="button" class="btn btn-success btn-arrow-right" (click)="addDefault()">-</button>
+            <button type="button" class="btn btn-danger btn-arrow-left" (click)="removeDefault()">-</button>
+        </div>
+    </div>
+
+    <div class="col-md-4">
+        <app-listview #defaultList [items]="defaultInterlocutors" [secondColumnVisibility]="false" (click)="defaultListClicked()" (emitter)="onSelectItem($event)"></app-listview>
+    </div>
+
+</div>

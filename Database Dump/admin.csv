@@ -1,0 +1,3 @@
+"username (S)","email (S)","password (S)","superadmin (BOOL)","tkn (S)","recoveryTkn (S)"
+"cesco","marchetto@gmail.com","7fa21cb021971956ae7559cc80a0b552","true","0b26393fcec559e2a21be424fc08d039",
+"antonino","antonino.mac93@gmail.com","7fa21cb021971956ae7559cc80a0b552","true"," ","8f103bd37ba54245bdf2f38413eaac9f"

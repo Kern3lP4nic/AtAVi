@@ -1,0 +1,11 @@
+<div id="guest-main">
+
+    <app-data-display [userText]="userText"></app-data-display>
+
+    <app-manage-conversation (onUpdateDataDisplay)="updateDataDisplay($event)" (audioEmitter)="audioReceived($event)"></app-manage-conversation>
+
+    <!--<button (click)="loginWithAmazon()">Login with Amazon</button>
+    <button (click)="refreshToken()">Refresh Amazon token</button>
+    <button (click)="downchannel()">Open Downchannel</button>
+    <button (click)="events('SynchronizeState')">SynchronizeState</button>-->
+</div>

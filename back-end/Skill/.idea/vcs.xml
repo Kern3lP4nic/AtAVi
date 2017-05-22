@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="VcsDirectoryMappings">
+    <mapping directory="$PROJECT_DIR$" vcs="Git" />
+    <mapping directory="$PROJECT_DIR$/LambdaSkill" vcs="Git" />
+    <mapping directory="$PROJECT_DIR$/LambdaSkill/Actions" vcs="Git" />
+    <mapping directory="$PROJECT_DIR$/LambdaSkill/LogService" vcs="Git" />
+    <mapping directory="$PROJECT_DIR$/LambdaSkill/QuestionService" vcs="Git" />
+  </component>
+</project>

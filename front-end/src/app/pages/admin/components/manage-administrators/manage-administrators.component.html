@@ -1,0 +1,103 @@
+<div class="row">
+    <div class="col-md-8 col-md-offset-2">
+
+        <app-listview #list class="col-md-12" [items]="adminArray" (emitter)="onSelectItem($event)"></app-listview>
+
+        <button type="button" class="btn btn-default col-md-offset-10" (click)="addAdminModalVisibility = true">Aggiungi</button>
+
+    </div>
+</div>
+
+<!-- Modal per aggiungere un nuovo amministratore -->
+<div #modal class="modal" role="dialog" *ngIf="addAdminModalVisibility">
+    <div class="modal-dialog">
+
+        <div class="modal-content">
+            <div class="modal-header">
+                <h4 class="modal-title">Aggiungi nuovo amministratore</h4>
+            </div>
+
+            <form [formGroup]="addAdminForm" (ngSubmit)="addAdminSubmit(addAdminForm.value)">
+
+                <div class="modal-body">
+
+                    <div class="form-group" [ngClass]="{'has-error':!addAdminForm.controls['email'].valid && addAdminForm.controls['email'].touched}">
+                        <input type="email" class="form-control" placeholder="Email" [formControl]="addAdminForm.controls['email']" />
+                        <div *ngIf="addAdminForm.controls['email'].hasError('required') && addAdminForm.controls['email'].touched" class="alert alert-danger">Email non inserita</div>
+                        <div *ngIf="addAdminForm.controls['email'].hasError('pattern') && addAdminForm.controls['email'].touched" class="alert alert-danger">Controlla di aver inserito una email corretta</div>
+                    </div>
+                    <div class="form-group" [ngClass]="{'has-error':!addAdminForm.controls['username'].valid && addAdminForm.controls['username'].touched}">
+                        <input type="text" class="form-control" placeholder="Username" [formControl]="addAdminForm.controls['username']" />
+                        <div *ngIf="addAdminForm.controls['username'].hasError('required') && addAdminForm.controls['username'].touched" class="alert alert-danger">Username non inserito</div>
+                    </div>
+                    <div class="form-group" [ngClass]="{'has-error':!addAdminForm.controls['password'].valid && addAdminForm.controls['password'].touched}">
+                        <input type="password" class="form-control" placeholder="Password" [formControl]="addAdminForm.controls['password']" />
+                        <div *ngIf="addAdminForm.controls['password'].hasError('minlength') && addAdminForm.controls['password'].touched" class="alert alert-danger">Controlla di aver inserito una password di almeno 8 caratteri</div>
+                        <div *ngIf="addAdminForm.controls['password'].hasError('maxlength') && addAdminForm.controls['password'].touched" class="alert alert-danger">Controlla di aver inserito una password di massimo 16 caratteri</div>
+                    </div>
+                    <div class="form-group">
+                        <label class="checkbox-inline">
+                            <input type="checkbox" name="superAdmin" value="false" [formControl]="addAdminForm.controls['superAdmin']"> Permessi di SuperAdmin
+                        </label>
+                    </div>
+                </div>
+
+                <div class="modal-footer">
+                    <div class="form-group">
+                        <button type="submit" class="btn btn-success" [disabled]="!addAdminForm.valid">Salva</button>
+                        <button type="button" class="btn btn-danger" (click)="closeModal()">Annulla</button>
+                    </div>
+                </div>
+
+            </form>
+
+        </div>
+
+    </div>
+</div>
+
+<!-- Modal per aggiornare un amministratore -->
+<div #modal class="modal" role="dialog" *ngIf="updateAdminModalVisibility">
+    <div class="modal-dialog">
+
+        <div class="modal-content">
+            <div class="modal-header">
+                <h4 class="modal-title">Aggiorna dati amministratore</h4>
+            </div>
+
+            <form [formGroup]="updateAdminForm" (ngSubmit)="updateAdminSubmit(updateAdminForm.value)">
+
+                <div class="modal-body">
+
+                    <div class="form-group" [ngClass]="{'has-error':!updateAdminForm.controls['email'].valid && updateAdminForm.controls['email'].touched}">
+                        <input type="email" class="form-control" placeholder="Email" [formControl]="updateAdminForm.controls['email']" />
+                        <div *ngIf="updateAdminForm.controls['email'].hasError('required') && updateAdminForm.controls['email'].touched" class="alert alert-danger">Email non inserita</div>
+                        <div *ngIf="updateAdminForm.controls['email'].hasError('pattern') && updateAdminForm.controls['email'].touched" class="alert alert-danger">Controlla di aver inserito una email corretta</div>
+                    </div>
+                    <div class="form-group" [ngClass]="{'has-error':!updateAdminForm.controls['username'].valid && updateAdminForm.controls['username'].touched}">
+                        <input type="text" class="form-control" placeholder="Username" [formControl]="updateAdminForm.controls['username']" />
+                        <div *ngIf="updateAdminForm.controls['username'].hasError('required') && updateAdminForm.controls['username'].touched" class="alert alert-danger">Username non inserito</div>
+                    </div>
+                    <div class="form-group">
+                        <input type="password" class="form-control" placeholder="Password" [formControl]="updateAdminForm.controls['password']" />
+                    </div>
+                    <div class="form-group">
+                        <label class="checkbox-inline">
+                            <input type="checkbox" name="superAdmin" value="false" [formControl]="updateAdminForm.controls['superAdmin']"> Permessi di SuperAdmin
+                        </label>
+                    </div>
+                </div>
+
+                <div class="modal-footer">
+                    <div class="form-group">
+                        <button type="submit" class="btn btn-success" [disabled]="!updateAdminForm.valid">Salva</button>
+                        <button type="button" class="btn btn-danger" (click)="closeModal()">Annulla</button>
+                    </div>
+                </div>
+
+            </form>
+
+        </div>
+
+    </div>
+</div>

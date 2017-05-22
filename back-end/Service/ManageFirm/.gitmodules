@@ -1,0 +1,6 @@
+[submodule "authservice"] 
+   path = authservice 
+   url = git@gitlab.com:kern3lp4nic/authservice.git
+[submodule "firmservice"]
+	path = firmservice
+	url = git@gitlab.com:kern3lp4nic/firmservice.git

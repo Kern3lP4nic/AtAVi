@@ -1,0 +1,6 @@
+[submodule "adminservice"] 
+  path = adminservice 
+  url = git@gitlab.com:kern3lp4nic/AdminService.git 
+[submodule "authservice"] 
+   path = authservice 
+   url = git@gitlab.com:kern3lp4nic/authservice.git 

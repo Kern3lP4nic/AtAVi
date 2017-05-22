@@ -1,0 +1,75 @@
+---
+swagger: "2.0"
+info:
+  version: "2017-04-26T13:23:54Z"
+  title: "GuestHome"
+basePath: "/AmazonLogin"
+schemes:
+- "https"
+paths:
+  /gettoken:
+    get:
+      produces:
+      - "application/json"
+      parameters:
+      - name: "code"
+        in: "query"
+        required: false
+        type: "string"
+      responses:
+        200:
+          description: "200 response"
+          schema:
+            $ref: "#/definitions/Empty"
+          headers:
+            Access-Control-Allow-Origin:
+              type: "string"
+      x-amazon-apigateway-integration:
+        responses:
+          default:
+            statusCode: "200"
+            responseParameters:
+              method.response.header.Access-Control-Allow-Origin: "'*'"
+        uri: "arn:aws:apigateway:us-east-1:lambda:path/2015-03-31/functions/arn:aws:lambda:us-east-1:321411950107:function:GetToken/invocations"
+        passthroughBehavior: "when_no_match"
+        httpMethod: "POST"
+        cacheNamespace: "qe7ptn"
+        cacheKeyParameters:
+        - "method.request.querystring.code"
+        contentHandling: "CONVERT_TO_TEXT"
+        type: "aws_proxy"
+  /refreshtoken:
+    get:
+      produces:
+      - "application/json"
+      parameters:
+      - name: "token"
+        in: "query"
+        required: false
+        type: "string"
+      responses:
+        200:
+          description: "200 response"
+          schema:
+            $ref: "#/definitions/Empty"
+          headers:
+            Access-Control-Allow-Origin:
+              type: "string"
+      x-amazon-apigateway-integration:
+        responses:
+          default:
+            statusCode: "200"
+            responseParameters:
+              method.response.header.Access-Control-Allow-Origin: "'*'"
+        uri: "arn:aws:apigateway:us-east-1:lambda:path/2015-03-31/functions/arn:aws:lambda:us-east-1:321411950107:function:RefreshToken/invocations"
+        passthroughBehavior: "when_no_match"
+        httpMethod: "POST"
+        cacheNamespace: "pfp51p"
+        cacheKeyParameters:
+        - "method.request.querystring.token"
+        contentHandling: "CONVERT_TO_TEXT"
+        type: "aws_proxy"
+definitions:
+  Empty:
+    type: "object"
+    title: "Empty Schema"

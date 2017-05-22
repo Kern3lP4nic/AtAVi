@@ -1,0 +1,59 @@
+{
+	"title": "question",
+	"type": "object",
+	"properties": {
+		"id": {
+			"type": "integer"
+		},
+		"baseText": {
+			"type": "string",
+			"pattern": "^[a-zA-Z0-9 ?]+$"
+		},
+		"questionAction": {
+			"type":"integer"
+		},
+		"recurrentText": {
+			"type": "string",
+			"pattern": "^[a-zA-Z0-9 ?]+$"
+		},
+		"isFirst": {
+			"type": "boolean",
+			"pattern": "^[true | false]$"
+		},
+		"dynamic": {
+			"type": "boolean",
+			"pattern": "^[true | false]$"
+		},
+		"answers": {
+			"type": "array",
+			"items":{
+                    "anyOf":[{
+                    "type":"object",
+					"properties":{
+						"id_nextQuestion": {
+							"type": "integer"
+						},
+						"actions": {
+							"type": "array",
+							"items":{
+							"anyOf":[{
+							"type":"object",
+							"properties":{
+								"id_action": {
+									"type": "integer"
+								},
+								"text": {
+									"type": "string",
+									"pattern": "^[a-zA-Z0-9 ]+$"
+								},
+								"isQuestion":{
+									"type":"boolean"
+								}
+							}}]}}
+						}
+					}
+		]}
+	}},
+	"additionalProperties": false,
+	"required": ["id", "baseText", "dynamic", "answers"]
+}

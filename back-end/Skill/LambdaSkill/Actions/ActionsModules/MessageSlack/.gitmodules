@@ -1,0 +1,6 @@
+[submodule "Slack"]
+	path = Slack
+	url = git@gitlab.com:kern3lp4nic/Slack.git
+[submodule "InfoSlack"]
+	path = InfoSlack
+	url = git@gitlab.com:kern3lp4nic/InfoSlack.git

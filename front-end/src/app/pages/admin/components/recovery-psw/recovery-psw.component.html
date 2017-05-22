@@ -1,0 +1,38 @@
+<div class="container">
+  <div class="row">
+    <div class="col-md-6 col-md-offset-1">
+      <div class="panel panel-login">
+
+        <div class="panel-heading text-center">
+          <h2>AtAVi</h2>
+          <h5>Controlla la tua e-mail di default</h5>
+          <hr>
+        </div>
+
+        <div class="panel-body">
+          <div class="row">
+            <div class="col-lg-12">
+
+              <form [formGroup]="checkRecoveryForm" (ngSubmit)="checkRecoverySubmit(checkRecoveryForm.value)">
+
+                <div class="form-group">
+                  <input type="text" name="token" class="form-control" placeholder="token" [formControl]="checkRecoveryForm.controls['token']">
+                  <p *ngIf="checkRecoveryForm.controls['token'].hasError('required') && checkRecoveryForm.controls['token'].touched" class="message-error">token non inserito</p>
+                </div>
+                <div class="form-group">
+                  <input type="password" name="password" class="form-control" placeholder="Nuova Password" [formControl]="checkRecoveryForm.controls['password']">
+                  <p *ngIf="checkRecoveryForm.controls['password'].hasError('minlength') && checkRecoveryForm.controls['password'].touched" class="message-error">Controlla di aver inserito una password di almeno 8 caratteri</p>
+                </div>
+                <div class="form-group text-center">
+                  <button type="submit" class="btn btn-login" [disabled]="!checkRecoveryForm.valid">Update</button>
+                </div>
+              </form>
+
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </div>
+</div>

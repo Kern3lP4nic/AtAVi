@@ -1,0 +1,2557 @@
+{
+  "info": {
+    "version": "2017-05-12T07:50:14Z", 
+    "title": "ManageAdministrators"
+  }, 
+  "paths": {
+    "/ManageFirm/Conversation": {
+      "options": {
+        "x-amazon-apigateway-integration": {
+          "requestTemplates": {
+            "application/json": "{\"statusCode\": 200}"
+          }, 
+          "passthroughBehavior": "when_no_match", 
+          "type": "mock", 
+          "responses": {
+            "default": {
+              "statusCode": "200", 
+              "responseParameters": {
+                "method.response.header.Access-Control-Allow-Origin": "'*'", 
+                "method.response.header.Access-Control-Allow-Methods": "'GET,OPTIONS'", 
+                "method.response.header.Access-Control-Allow-Headers": "'Content-Type,X-Amz-Date,Authorization'"
+              }
+            }
+          }
+        }, 
+        "produces": [
+          "application/json"
+        ], 
+        "consumes": [
+          "application/json"
+        ], 
+        "responses": {
+          "200": {
+            "headers": {
+              "Access-Control-Allow-Origin": {
+                "type": "string"
+              }, 
+              "Access-Control-Allow-Methods": {
+                "type": "string"
+              }, 
+              "Access-Control-Allow-Headers": {
+                "type": "string"
+              }
+            }, 
+            "description": "200 response", 
+            "schema": {
+              "$ref": "#/definitions/apiTrame"
+            }
+          }, 
+          "400": {
+            "headers": {
+              "Access-Control-Allow-Origin": {
+                "type": "string"
+              }, 
+              "Access-Control-Allow-Methods": {
+                "type": "string"
+              }, 
+              "Access-Control-Allow-Headers": {
+                "type": "string"
+              }
+            }, 
+            "description": "400 response", 
+            "schema": {
+              "$ref": "#/definitions/apiTrame"
+            }
+          }
+        }
+      }, 
+      "get": {
+        "x-amazon-apigateway-integration": {
+          "contentHandling": "CONVERT_TO_TEXT", 
+          "cacheKeyParameters": [
+            "method.request.querystring.firm", 
+            "method.request.querystring.guest"
+          ], 
+          "uri": "arn:aws:apigateway:us-east-1:lambda:path/2015-03-31/functions/arn:aws:lambda:us-east-1:321411950107:function:ManageFirm/invocations", 
+          "httpMethod": "POST", 
+          "passthroughBehavior": "when_no_match", 
+          "cacheNamespace": "xoyzub", 
+          "type": "aws_proxy", 
+          "responses": {
+            "default": {
+              "statusCode": "200", 
+              "responseParameters": {
+                "method.response.header.Access-Control-Allow-Origin": "'*'"
+              }
+            }
+          }
+        }, 
+        "responses": {
+          "200": {
+            "headers": {
+              "Access-Control-Allow-Origin": {
+                "type": "string"
+              }, 
+              "Access-Control-Allow-Methods": {
+                "type": "string"
+              }, 
+              "Access-Control-Allow-Headers": {
+                "type": "string"
+              }
+            }, 
+            "description": "200 response", 
+            "schema": {
+              "$ref": "#/definitions/apiTrame"
+            }
+          }, 
+          "400": {
+            "headers": {
+              "Access-Control-Allow-Origin": {
+                "type": "string"
+              }, 
+              "Access-Control-Allow-Methods": {
+                "type": "string"
+              }, 
+              "Access-Control-Allow-Headers": {
+                "type": "string"
+              }
+            }, 
+            "description": "400 response", 
+            "schema": {
+              "$ref": "#/definitions/apiTrame"
+            }
+          }
+        }, 
+        "parameters": [
+          {
+            "required": true, 
+            "type": "string", 
+            "name": "firm", 
+            "in": "query"
+          }, 
+          {
+            "required": true, 
+            "type": "string", 
+            "name": "token", 
+            "in": "header"
+          }, 
+          {
+            "required": true, 
+            "type": "string", 
+            "name": "guest", 
+            "in": "query"
+          }
+        ], 
+        "produces": [
+          "application/json"
+        ]
+      }
+    }, 
+    "/ManageQuestions/Actions": {
+      "post": {
+        "x-amazon-apigateway-integration": {
+          "httpMethod": "POST", 
+          "contentHandling": "CONVERT_TO_TEXT", 
+          "responses": {
+            "default": {
+              "statusCode": "200", 
+              "responseParameters": {
+                "method.response.header.Access-Control-Allow-Origin": "'*'"
+              }
+            }
+          }, 
+          "passthroughBehavior": "when_no_match", 
+          "type": "aws_proxy", 
+          "uri": "arn:aws:apigateway:us-east-1:lambda:path/2015-03-31/functions/arn:aws:lambda:us-east-1:321411950107:function:ManageQuestions/invocations"
+        }, 
+        "produces": [
+          "application/json"
+        ], 
+        "consumes": [
+          "application/json"
+        ], 
+        "parameters": [
+          {
+            "required": true, 
+            "type": "string", 
+            "name": "token", 
+            "in": "header"
+          }, 
+          {
+            "required": true, 
+            "in": "body", 
+            "name": "Action", 
+            "schema": {
+              "$ref": "#/definitions/Action"
+            }
+          }
+        ], 
+        "responses": {
+          "200": {
+            "headers": {
+              "Access-Control-Allow-Origin": {
+                "type": "string"
+              }, 
+              "Access-Control-Allow-Methods": {
+                "type": "string"
+              }, 
+              "Access-Control-Allow-Headers": {
+                "type": "string"
+              }
+            }, 
+            "description": "200 response", 
+            "schema": {
+              "$ref": "#/definitions/apiTrame"
+            }
+          }, 
+          "400": {
+            "headers": {
+              "Access-Control-Allow-Origin": {
+                "type": "string"
+              }, 
+              "Access-Control-Allow-Methods": {
+                "type": "string"
+              }, 
+              "Access-Control-Allow-Headers": {
+                "type": "string"
+              }
+            }, 
+            "description": "400 response", 
+            "schema": {
+              "$ref": "#/definitions/apiTrame"
+            }
+          }
+        }
+      }, 
+      "get": {
+        "x-amazon-apigateway-integration": {
+          "httpMethod": "POST", 
+          "contentHandling": "CONVERT_TO_TEXT", 
+          "responses": {
+            "default": {
+              "statusCode": "200", 
+              "responseParameters": {
+                "method.response.header.Access-Control-Allow-Origin": "'*'"
+              }
+            }
+          }, 
+          "passthroughBehavior": "when_no_match", 
+          "type": "aws_proxy", 
+          "uri": "arn:aws:apigateway:us-east-1:lambda:path/2015-03-31/functions/arn:aws:lambda:us-east-1:321411950107:function:ManageQuestions/invocations"
+        }, 
+        "responses": {
+          "200": {
+            "headers": {
+              "Access-Control-Allow-Origin": {
+                "type": "string"
+              }, 
+              "Access-Control-Allow-Methods": {
+                "type": "string"
+              }, 
+              "Access-Control-Allow-Headers": {
+                "type": "string"
+              }
+            }, 
+            "description": "200 response", 
+            "schema": {
+              "$ref": "#/definitions/apiTrame"
+            }
+          }, 
+          "400": {
+            "headers": {
+              "Access-Control-Allow-Origin": {
+                "type": "string"
+              }, 
+              "Access-Control-Allow-Methods": {
+                "type": "string"
+              }, 
+              "Access-Control-Allow-Headers": {
+                "type": "string"
+              }
+            }, 
+            "description": "400 response", 
+            "schema": {
+              "$ref": "#/definitions/apiTrame"
+            }
+          }
+        }, 
+        "parameters": [
+          {
+            "required": true, 
+            "type": "string", 
+            "name": "token", 
+            "in": "header"
+          }
+        ], 
+        "produces": [
+          "application/json"
+        ]
+      }, 
+      "options": {
+        "x-amazon-apigateway-integration": {
+          "requestTemplates": {
+            "application/json": "{\"statusCode\": 200}"
+          }, 
+          "passthroughBehavior": "when_no_match", 
+          "type": "mock", 
+          "responses": {
+            "default": {
+              "statusCode": "200", 
+              "responseParameters": {
+                "method.response.header.Access-Control-Allow-Origin": "'*'", 
+                "method.response.header.Access-Control-Allow-Methods": "'DELETE,POST,GET,OPTIONS'", 
+                "method.response.header.Access-Control-Allow-Headers": "'Content-Type'"
+              }
+            }
+          }
+        }, 
+        "produces": [
+          "application/json"
+        ], 
+        "consumes": [
+          "application/json"
+        ], 
+        "responses": {
+          "200": {
+            "headers": {
+              "Access-Control-Allow-Origin": {
+                "type": "string"
+              }, 
+              "Access-Control-Allow-Methods": {
+                "type": "string"
+              }, 
+              "Access-Control-Allow-Headers": {
+                "type": "string"
+              }
+            }, 
+            "description": "200 response", 
+            "schema": {
+              "$ref": "#/definitions/apiTrame"
+            }
+          }, 
+          "400": {
+            "headers": {
+              "Access-Control-Allow-Origin": {
+                "type": "string"
+              }, 
+              "Access-Control-Allow-Methods": {
+                "type": "string"
+              }, 
+              "Access-Control-Allow-Headers": {
+                "type": "string"
+              }
+            }, 
+            "description": "400 response", 
+            "schema": {
+              "$ref": "#/definitions/apiTrame"
+            }
+          }
+        }
+      }, 
+      "delete": {
+        "x-amazon-apigateway-integration": {
+          "contentHandling": "CONVERT_TO_TEXT", 
+          "cacheKeyParameters": [
+            "method.request.header.token"
+          ], 
+          "uri": "arn:aws:apigateway:us-east-1:lambda:path/2015-03-31/functions/arn:aws:lambda:us-east-1:321411950107:function:ManageQuestions/invocations", 
+          "httpMethod": "POST", 
+          "passthroughBehavior": "when_no_match", 
+          "cacheNamespace": "88ihli", 
+          "type": "aws_proxy", 
+          "responses": {
+            "default": {
+              "statusCode": "200", 
+              "responseParameters": {
+                "method.response.header.Access-Control-Allow-Origin": "'*'"
+              }
+            }
+          }
+        }, 
+        "produces": [
+          "application/json"
+        ], 
+        "consumes": [
+          "application/json"
+        ], 
+        "parameters": [
+          {
+            "required": true, 
+            "type": "string", 
+            "name": "token", 
+            "in": "header"
+          }, 
+          {
+            "required": true, 
+            "in": "body", 
+            "name": "Action", 
+            "schema": {
+              "$ref": "#/definitions/Action"
+            }
+          }
+        ], 
+        "responses": {
+          "200": {
+            "headers": {
+              "Access-Control-Allow-Origin": {
+                "type": "string"
+              }, 
+              "Access-Control-Allow-Methods": {
+                "type": "string"
+              }, 
+              "Access-Control-Allow-Headers": {
+                "type": "string"
+              }
+            }, 
+            "description": "200 response", 
+            "schema": {
+              "$ref": "#/definitions/apiTrame"
+            }
+          }, 
+          "400": {
+            "headers": {
+              "Access-Control-Allow-Origin": {
+                "type": "string"
+              }, 
+              "Access-Control-Allow-Methods": {
+                "type": "string"
+              }, 
+              "Access-Control-Allow-Headers": {
+                "type": "string"
+              }
+            }, 
+            "description": "400 response", 
+            "schema": {
+              "$ref": "#/definitions/apiTrame"
+            }
+          }
+        }
+      }
+    }, 
+    "/ManageSlack/Interlocutors": {
+      "put": {
+        "x-amazon-apigateway-integration": {
+          "httpMethod": "POST", 
+          "contentHandling": "CONVERT_TO_TEXT", 
+          "responses": {
+            "default": {
+              "statusCode": "200", 
+              "responseParameters": {
+                "method.response.header.Access-Control-Allow-Origin": "'*'"
+              }
+            }
+          }, 
+          "passthroughBehavior": "when_no_match", 
+          "type": "aws_proxy", 
+          "uri": "arn:aws:apigateway:us-east-1:lambda:path/2015-03-31/functions/arn:aws:lambda:us-east-1:321411950107:function:ManageSlack/invocations", 
+          "cacheKeyParameters": [
+            "method.request.header.token"
+          ]
+        }, 
+        "responses": {
+          "200": {
+            "headers": {
+              "Access-Control-Allow-Origin": {
+                "type": "string"
+              }, 
+              "Access-Control-Allow-Methods": {
+                "type": "string"
+              }, 
+              "Access-Control-Allow-Headers": {
+                "type": "string"
+              }
+            }, 
+            "description": "200 response", 
+            "schema": {
+              "$ref": "#/definitions/apiTrame"
+            }
+          }, 
+          "400": {
+            "headers": {
+              "Access-Control-Allow-Origin": {
+                "type": "string"
+              }, 
+              "Access-Control-Allow-Methods": {
+                "type": "string"
+              }, 
+              "Access-Control-Allow-Headers": {
+                "type": "string"
+              }
+            }, 
+            "description": "400 response", 
+            "schema": {
+              "$ref": "#/definitions/apiTrame"
+            }
+          }
+        }, 
+        "parameters": [
+          {
+            "required": true, 
+            "type": "string", 
+            "name": "token", 
+            "in": "header"
+          }
+        ], 
+        "produces": [
+          "application/json"
+        ]
+      }, 
+      "options": {
+        "x-amazon-apigateway-integration": {
+          "requestTemplates": {
+            "application/json": "{\"statusCode\": 200}"
+          }, 
+          "passthroughBehavior": "when_no_match", 
+          "type": "mock", 
+          "responses": {
+            "default": {
+              "statusCode": "200", 
+              "responseParameters": {
+                "method.response.header.Access-Control-Allow-Origin": "'*'", 
+                "method.response.header.Access-Control-Allow-Methods": "'GET,OPTIONS,PUT'", 
+                "method.response.header.Access-Control-Allow-Headers": "'Content-Type,X-Amz-Date,Authorization'"
+              }
+            }
+          }
+        }, 
+        "produces": [
+          "application/json"
+        ], 
+        "consumes": [
+          "application/json"
+        ], 
+        "responses": {
+          "200": {
+            "headers": {
+              "Access-Control-Allow-Origin": {
+                "type": "string"
+              }, 
+              "Access-Control-Allow-Methods": {
+                "type": "string"
+              }, 
+              "Access-Control-Allow-Headers": {
+                "type": "string"
+              }
+            }, 
+            "description": "200 response", 
+            "schema": {
+              "$ref": "#/definitions/apiTrame"
+            }
+          }, 
+          "400": {
+            "headers": {
+              "Access-Control-Allow-Origin": {
+                "type": "string"
+              }, 
+              "Access-Control-Allow-Methods": {
+                "type": "string"
+              }, 
+              "Access-Control-Allow-Headers": {
+                "type": "string"
+              }
+            }, 
+            "description": "400 response", 
+            "schema": {
+              "$ref": "#/definitions/apiTrame"
+            }
+          }
+        }
+      }, 
+      "get": {
+        "x-amazon-apigateway-integration": {
+          "contentHandling": "CONVERT_TO_TEXT", 
+          "cacheKeyParameters": [
+            "method.request.header.token"
+          ], 
+          "uri": "arn:aws:apigateway:us-east-1:lambda:path/2015-03-31/functions/arn:aws:lambda:us-east-1:321411950107:function:ManageSlack/invocations", 
+          "httpMethod": "POST", 
+          "passthroughBehavior": "when_no_match", 
+          "cacheNamespace": "3yy4hc", 
+          "type": "aws_proxy", 
+          "responses": {
+            "default": {
+              "statusCode": "200", 
+              "responseParameters": {
+                "method.response.header.Access-Control-Allow-Origin": "'*'"
+              }
+            }
+          }
+        }, 
+        "responses": {
+          "200": {
+            "headers": {
+              "Access-Control-Allow-Origin": {
+                "type": "string"
+              }, 
+              "Access-Control-Allow-Methods": {
+                "type": "string"
+              }, 
+              "Access-Control-Allow-Headers": {
+                "type": "string"
+              }
+            }, 
+            "description": "200 response", 
+            "schema": {
+              "$ref": "#/definitions/apiTrame"
+            }
+          }, 
+          "400": {
+            "headers": {
+              "Access-Control-Allow-Origin": {
+                "type": "string"
+              }, 
+              "Access-Control-Allow-Methods": {
+                "type": "string"
+              }, 
+              "Access-Control-Allow-Headers": {
+                "type": "string"
+              }
+            }, 
+            "description": "400 response", 
+            "schema": {
+              "$ref": "#/definitions/apiTrame"
+            }
+          }
+        }, 
+        "parameters": [
+          {
+            "required": true, 
+            "type": "string", 
+            "name": "token", 
+            "in": "header"
+          }
+        ], 
+        "produces": [
+          "application/json"
+        ]
+      }
+    }, 
+    "/ManageFirm/Firm": {
+      "put": {
+        "x-amazon-apigateway-integration": {
+          "httpMethod": "POST", 
+          "contentHandling": "CONVERT_TO_TEXT", 
+          "responses": {
+            "default": {
+              "statusCode": "200", 
+              "responseParameters": {
+                "method.response.header.Access-Control-Allow-Origin": "'*'"
+              }
+            }
+          }, 
+          "passthroughBehavior": "when_no_match", 
+          "type": "aws_proxy", 
+          "uri": "arn:aws:apigateway:us-east-1:lambda:path/2015-03-31/functions/arn:aws:lambda:us-east-1:321411950107:function:ManageFirm/invocations"
+        }, 
+        "produces": [
+          "application/json"
+        ], 
+        "consumes": [
+          "application/json"
+        ], 
+        "parameters": [
+          {
+            "required": true, 
+            "type": "string", 
+            "name": "token", 
+            "in": "header"
+          }, 
+          {
+            "required": true, 
+            "in": "body", 
+            "name": "Firm", 
+            "schema": {
+              "$ref": "#/definitions/Firm"
+            }
+          }
+        ], 
+        "responses": {
+          "200": {
+            "headers": {
+              "Access-Control-Allow-Origin": {
+                "type": "string"
+              }, 
+              "Access-Control-Allow-Methods": {
+                "type": "string"
+              }, 
+              "Access-Control-Allow-Headers": {
+                "type": "string"
+              }
+            }, 
+            "description": "200 response", 
+            "schema": {
+              "$ref": "#/definitions/apiTrame"
+            }
+          }, 
+          "400": {
+            "headers": {
+              "Access-Control-Allow-Origin": {
+                "type": "string"
+              }, 
+              "Access-Control-Allow-Methods": {
+                "type": "string"
+              }, 
+              "Access-Control-Allow-Headers": {
+                "type": "string"
+              }
+            }, 
+            "description": "400 response", 
+            "schema": {
+              "$ref": "#/definitions/apiTrame"
+            }
+          }
+        }
+      }, 
+      "options": {
+        "x-amazon-apigateway-integration": {
+          "requestTemplates": {
+            "application/json": "{\"statusCode\": 200}"
+          }, 
+          "passthroughBehavior": "when_no_match", 
+          "type": "mock", 
+          "responses": {
+            "default": {
+              "statusCode": "200", 
+              "responseParameters": {
+                "method.response.header.Access-Control-Allow-Origin": "'*'", 
+                "method.response.header.Access-Control-Allow-Methods": "'GET,PUT,OPTIONS'", 
+                "method.response.header.Access-Control-Allow-Headers": "'Content-Type,X-Amz-Date,Authorization'"
+              }
+            }
+          }
+        }, 
+        "produces": [
+          "application/json"
+        ], 
+        "consumes": [
+          "application/json"
+        ], 
+        "responses": {
+          "200": {
+            "headers": {
+              "Access-Control-Allow-Origin": {
+                "type": "string"
+              }, 
+              "Access-Control-Allow-Methods": {
+                "type": "string"
+              }, 
+              "Access-Control-Allow-Headers": {
+                "type": "string"
+              }
+            }, 
+            "description": "200 response", 
+            "schema": {
+              "$ref": "#/definitions/apiTrame"
+            }
+          }, 
+          "400": {
+            "headers": {
+              "Access-Control-Allow-Origin": {
+                "type": "string"
+              }, 
+              "Access-Control-Allow-Methods": {
+                "type": "string"
+              }, 
+              "Access-Control-Allow-Headers": {
+                "type": "string"
+              }
+            }, 
+            "description": "400 response", 
+            "schema": {
+              "$ref": "#/definitions/apiTrame"
+            }
+          }
+        }
+      }, 
+      "get": {
+        "x-amazon-apigateway-integration": {
+          "httpMethod": "POST", 
+          "contentHandling": "CONVERT_TO_TEXT", 
+          "responses": {
+            "default": {
+              "statusCode": "200", 
+              "responseParameters": {
+                "method.response.header.Access-Control-Allow-Origin": "'*'"
+              }
+            }
+          }, 
+          "passthroughBehavior": "when_no_match", 
+          "type": "aws_proxy", 
+          "uri": "arn:aws:apigateway:us-east-1:lambda:path/2015-03-31/functions/arn:aws:lambda:us-east-1:321411950107:function:ManageFirm/invocations"
+        }, 
+        "responses": {
+          "200": {
+            "headers": {
+              "Access-Control-Allow-Origin": {
+                "type": "string"
+              }, 
+              "Access-Control-Allow-Methods": {
+                "type": "string"
+              }, 
+              "Access-Control-Allow-Headers": {
+                "type": "string"
+              }
+            }, 
+            "description": "200 response", 
+            "schema": {
+              "$ref": "#/definitions/apiTrame"
+            }
+          }, 
+          "400": {
+            "headers": {
+              "Access-Control-Allow-Origin": {
+                "type": "string"
+              }, 
+              "Access-Control-Allow-Methods": {
+                "type": "string"
+              }, 
+              "Access-Control-Allow-Headers": {
+                "type": "string"
+              }
+            }, 
+            "description": "400 response", 
+            "schema": {
+              "$ref": "#/definitions/apiTrame"
+            }
+          }
+        }, 
+        "parameters": [
+          {
+            "required": true, 
+            "type": "string", 
+            "name": "token", 
+            "in": "header"
+          }
+        ], 
+        "produces": [
+          "application/json"
+        ]
+      }
+    }, 
+    "/ManageAdministrators": {
+      "put": {
+        "x-amazon-apigateway-integration": {
+          "httpMethod": "POST", 
+          "contentHandling": "CONVERT_TO_TEXT", 
+          "responses": {
+            "default": {
+              "statusCode": "200", 
+              "responseParameters": {
+                "method.response.header.Access-Control-Allow-Origin": "'*'"
+              }
+            }
+          }, 
+          "passthroughBehavior": "when_no_match", 
+          "type": "aws_proxy", 
+          "uri": "arn:aws:apigateway:us-east-1:lambda:path/2015-03-31/functions/arn:aws:lambda:us-east-1:321411950107:function:ManageAdministrators/invocations"
+        }, 
+        "produces": [
+          "application/json"
+        ], 
+        "consumes": [
+          "application/json"
+        ], 
+        "parameters": [
+          {
+            "required": true, 
+            "type": "string", 
+            "name": "token", 
+            "in": "header"
+          }, 
+          {
+            "required": true, 
+            "in": "body", 
+            "name": "updateAdmin", 
+            "schema": {
+              "$ref": "#/definitions/updateAdmin"
+            }
+          }
+        ], 
+        "responses": {
+          "200": {
+            "headers": {
+              "Access-Control-Allow-Origin": {
+                "type": "string"
+              }, 
+              "Access-Control-Allow-Methods": {
+                "type": "string"
+              }, 
+              "Access-Control-Allow-Headers": {
+                "type": "string"
+              }
+            }, 
+            "description": "200 response", 
+            "schema": {
+              "$ref": "#/definitions/apiTrame"
+            }
+          }, 
+          "400": {
+            "headers": {
+              "Access-Control-Allow-Origin": {
+                "type": "string"
+              }, 
+              "Access-Control-Allow-Methods": {
+                "type": "string"
+              }, 
+              "Access-Control-Allow-Headers": {
+                "type": "string"
+              }
+            }, 
+            "description": "400 response", 
+            "schema": {
+              "$ref": "#/definitions/apiTrame"
+            }
+          }
+        }
+      }, 
+      "post": {
+        "x-amazon-apigateway-integration": {
+          "httpMethod": "POST", 
+          "contentHandling": "CONVERT_TO_TEXT", 
+          "responses": {
+            "default": {
+              "statusCode": "200", 
+              "responseParameters": {
+                "method.response.header.Access-Control-Allow-Origin": "'*'"
+              }
+            }
+          }, 
+          "passthroughBehavior": "when_no_match", 
+          "type": "aws_proxy", 
+          "uri": "arn:aws:apigateway:us-east-1:lambda:path/2015-03-31/functions/arn:aws:lambda:us-east-1:321411950107:function:ManageAdministrators/invocations"
+        }, 
+        "produces": [
+          "application/json"
+        ], 
+        "consumes": [
+          "application/json"
+        ], 
+        "parameters": [
+          {
+            "required": true, 
+            "type": "string", 
+            "name": "token", 
+            "in": "header"
+          }, 
+          {
+            "required": true, 
+            "in": "body", 
+            "name": "Admin", 
+            "schema": {
+              "$ref": "#/definitions/Admin"
+            }
+          }
+        ], 
+        "responses": {
+          "200": {
+            "headers": {
+              "Access-Control-Allow-Origin": {
+                "type": "string"
+              }, 
+              "Access-Control-Allow-Methods": {
+                "type": "string"
+              }, 
+              "Access-Control-Allow-Headers": {
+                "type": "string"
+              }
+            }, 
+            "description": "200 response", 
+            "schema": {
+              "$ref": "#/definitions/apiTrame"
+            }
+          }, 
+          "400": {
+            "headers": {
+              "Access-Control-Allow-Origin": {
+                "type": "string"
+              }, 
+              "Access-Control-Allow-Methods": {
+                "type": "string"
+              }, 
+              "Access-Control-Allow-Headers": {
+                "type": "string"
+              }
+            }, 
+            "description": "400 response", 
+            "schema": {
+              "$ref": "#/definitions/apiTrame"
+            }
+          }
+        }
+      }, 
+      "get": {
+        "x-amazon-apigateway-integration": {
+          "httpMethod": "POST", 
+          "contentHandling": "CONVERT_TO_TEXT", 
+          "responses": {
+            "default": {
+              "statusCode": "200", 
+              "responseParameters": {
+                "method.response.header.Access-Control-Allow-Origin": "'*'"
+              }
+            }
+          }, 
+          "passthroughBehavior": "when_no_match", 
+          "type": "aws_proxy", 
+          "uri": "arn:aws:apigateway:us-east-1:lambda:path/2015-03-31/functions/arn:aws:lambda:us-east-1:321411950107:function:ManageAdministrators/invocations", 
+          "cacheNamespace": "9qzcq1"
+        }, 
+        "responses": {
+          "200": {
+            "headers": {
+              "Access-Control-Allow-Origin": {
+                "type": "string"
+              }, 
+              "Access-Control-Allow-Methods": {
+                "type": "string"
+              }, 
+              "Access-Control-Allow-Headers": {
+                "type": "string"
+              }
+            }, 
+            "description": "200 response", 
+            "schema": {
+              "$ref": "#/definitions/apiTrame"
+            }
+          }, 
+          "400": {
+            "headers": {
+              "Access-Control-Allow-Origin": {
+                "type": "string"
+              }, 
+              "Access-Control-Allow-Methods": {
+                "type": "string"
+              }, 
+              "Access-Control-Allow-Headers": {
+                "type": "string"
+              }
+            }, 
+            "description": "400 response", 
+            "schema": {
+              "$ref": "#/definitions/apiTrame"
+            }
+          }
+        }, 
+        "parameters": [
+          {
+            "required": true, 
+            "type": "string", 
+            "name": "token", 
+            "in": "header"
+          }
+        ], 
+        "produces": [
+          "application/json"
+        ]
+      }, 
+      "options": {
+        "x-amazon-apigateway-integration": {
+          "requestTemplates": {
+            "application/json": "{\"statusCode\": 200}"
+          }, 
+          "passthroughBehavior": "when_no_match", 
+          "type": "mock", 
+          "responses": {
+            "default": {
+              "statusCode": "200", 
+              "responseParameters": {
+                "method.response.header.Access-Control-Allow-Origin": "'*'", 
+                "method.response.header.Access-Control-Allow-Methods": "'DELETE,POST,GET,PUT,OPTIONS'", 
+                "method.response.header.Access-Control-Allow-Headers": "'Content-Type,X-Amz-Date,Authorization'"
+              }
+            }
+          }
+        }, 
+        "produces": [
+          "application/json"
+        ], 
+        "consumes": [
+          "application/json"
+        ], 
+        "responses": {
+          "200": {
+            "headers": {
+              "Access-Control-Allow-Origin": {
+                "type": "string"
+              }, 
+              "Access-Control-Allow-Methods": {
+                "type": "string"
+              }, 
+              "Access-Control-Allow-Headers": {
+                "type": "string"
+              }
+            }, 
+            "description": "200 response", 
+            "schema": {
+              "$ref": "#/definitions/apiTrame"
+            }
+          }, 
+          "400": {
+            "headers": {
+              "Access-Control-Allow-Origin": {
+                "type": "string"
+              }, 
+              "Access-Control-Allow-Methods": {
+                "type": "string"
+              }, 
+              "Access-Control-Allow-Headers": {
+                "type": "string"
+              }
+            }, 
+            "description": "400 response", 
+            "schema": {
+              "$ref": "#/definitions/apiTrame"
+            }
+          }
+        }
+      }, 
+      "delete": {
+        "x-amazon-apigateway-integration": {
+          "httpMethod": "POST", 
+          "contentHandling": "CONVERT_TO_TEXT", 
+          "responses": {
+            "default": {
+              "statusCode": "200", 
+              "responseParameters": {
+                "method.response.header.Access-Control-Allow-Origin": "'*'"
+              }
+            }
+          }, 
+          "passthroughBehavior": "when_no_match", 
+          "type": "aws_proxy", 
+          "uri": "arn:aws:apigateway:us-east-1:lambda:path/2015-03-31/functions/arn:aws:lambda:us-east-1:321411950107:function:ManageAdministrators/invocations"
+        }, 
+        "produces": [
+          "application/json"
+        ], 
+        "consumes": [
+          "application/json"
+        ], 
+        "parameters": [
+          {
+            "required": true, 
+            "type": "string", 
+            "name": "token", 
+            "in": "header"
+          }, 
+          {
+            "required": true, 
+            "in": "body", 
+            "name": "updateAdmin", 
+            "schema": {
+              "$ref": "#/definitions/updateAdmin"
+            }
+          }
+        ], 
+        "responses": {
+          "200": {
+            "headers": {
+              "Access-Control-Allow-Origin": {
+                "type": "string"
+              }, 
+              "Access-Control-Allow-Methods": {
+                "type": "string"
+              }, 
+              "Access-Control-Allow-Headers": {
+                "type": "string"
+              }
+            }, 
+            "description": "200 response", 
+            "schema": {
+              "$ref": "#/definitions/apiTrame"
+            }
+          }, 
+          "400": {
+            "headers": {
+              "Access-Control-Allow-Origin": {
+                "type": "string"
+              }, 
+              "Access-Control-Allow-Methods": {
+                "type": "string"
+              }, 
+              "Access-Control-Allow-Headers": {
+                "type": "string"
+              }
+            }, 
+            "description": "400 response", 
+            "schema": {
+              "$ref": "#/definitions/apiTrame"
+            }
+          }
+        }
+      }
+    }, 
+    "/ManageSlack/DefaultInterlocutors": {
+      "post": {
+        "x-amazon-apigateway-integration": {
+          "httpMethod": "POST", 
+          "contentHandling": "CONVERT_TO_TEXT", 
+          "responses": {
+            "default": {
+              "statusCode": "200", 
+              "responseParameters": {
+                "method.response.header.Access-Control-Allow-Origin": "'*'"
+              }
+            }
+          }, 
+          "passthroughBehavior": "when_no_match", 
+          "type": "aws_proxy", 
+          "uri": "arn:aws:apigateway:us-east-1:lambda:path/2015-03-31/functions/arn:aws:lambda:us-east-1:321411950107:function:ManageSlack/invocations"
+        }, 
+        "produces": [
+          "application/json"
+        ], 
+        "consumes": [
+          "application/json"
+        ], 
+        "parameters": [
+          {
+            "required": true, 
+            "type": "string", 
+            "name": "token", 
+            "in": "header"
+          }, 
+          {
+            "required": true, 
+            "in": "body", 
+            "name": "Interlocutor", 
+            "schema": {
+              "$ref": "#/definitions/Interlocutor"
+            }
+          }
+        ], 
+        "responses": {
+          "200": {
+            "headers": {
+              "Access-Control-Allow-Origin": {
+                "type": "string"
+              }, 
+              "Access-Control-Allow-Methods": {
+                "type": "string"
+              }, 
+              "Access-Control-Allow-Headers": {
+                "type": "string"
+              }
+            }, 
+            "description": "200 response", 
+            "schema": {
+              "$ref": "#/definitions/apiTrame"
+            }
+          }, 
+          "400": {
+            "headers": {
+              "Access-Control-Allow-Origin": {
+                "type": "string"
+              }, 
+              "Access-Control-Allow-Methods": {
+                "type": "string"
+              }, 
+              "Access-Control-Allow-Headers": {
+                "type": "string"
+              }
+            }, 
+            "description": "400 response", 
+            "schema": {
+              "$ref": "#/definitions/apiTrame"
+            }
+          }
+        }
+      }, 
+      "get": {
+        "x-amazon-apigateway-integration": {
+          "contentHandling": "CONVERT_TO_TEXT", 
+          "cacheKeyParameters": [
+            "method.request.header.token"
+          ], 
+          "uri": "arn:aws:apigateway:us-east-1:lambda:path/2015-03-31/functions/arn:aws:lambda:us-east-1:321411950107:function:ManageSlack/invocations", 
+          "httpMethod": "POST", 
+          "passthroughBehavior": "when_no_match", 
+          "cacheNamespace": "c704jj", 
+          "type": "aws_proxy", 
+          "responses": {
+            "default": {
+              "statusCode": "200", 
+              "responseParameters": {
+                "method.response.header.Access-Control-Allow-Origin": "'*'"
+              }
+            }
+          }
+        }, 
+        "responses": {
+          "200": {
+            "headers": {
+              "Access-Control-Allow-Origin": {
+                "type": "string"
+              }, 
+              "Access-Control-Allow-Methods": {
+                "type": "string"
+              }, 
+              "Access-Control-Allow-Headers": {
+                "type": "string"
+              }
+            }, 
+            "description": "200 response", 
+            "schema": {
+              "$ref": "#/definitions/apiTrame"
+            }
+          }, 
+          "400": {
+            "headers": {
+              "Access-Control-Allow-Origin": {
+                "type": "string"
+              }, 
+              "Access-Control-Allow-Methods": {
+                "type": "string"
+              }, 
+              "Access-Control-Allow-Headers": {
+                "type": "string"
+              }
+            }, 
+            "description": "400 response", 
+            "schema": {
+              "$ref": "#/definitions/apiTrame"
+            }
+          }
+        }, 
+        "parameters": [
+          {
+            "required": true, 
+            "type": "string", 
+            "name": "token", 
+            "in": "header"
+          }
+        ], 
+        "produces": [
+          "application/json"
+        ]
+      }, 
+      "options": {
+        "x-amazon-apigateway-integration": {
+          "requestTemplates": {
+            "application/json": "{\"statusCode\": 200}"
+          }, 
+          "passthroughBehavior": "when_no_match", 
+          "type": "mock", 
+          "responses": {
+            "default": {
+              "statusCode": "200", 
+              "responseParameters": {
+                "method.response.header.Access-Control-Allow-Origin": "'*'", 
+                "method.response.header.Access-Control-Allow-Methods": "'DELETE,POST,GET,OPTIONS'", 
+                "method.response.header.Access-Control-Allow-Headers": "'Content-Type,X-Amz-Date,Authorization'"
+              }
+            }
+          }
+        }, 
+        "produces": [
+          "application/json"
+        ], 
+        "consumes": [
+          "application/json"
+        ], 
+        "responses": {
+          "200": {
+            "headers": {
+              "Access-Control-Allow-Origin": {
+                "type": "string"
+              }, 
+              "Access-Control-Allow-Methods": {
+                "type": "string"
+              }, 
+              "Access-Control-Allow-Headers": {
+                "type": "string"
+              }
+            }, 
+            "description": "200 response", 
+            "schema": {
+              "$ref": "#/definitions/apiTrame"
+            }
+          }, 
+          "400": {
+            "headers": {
+              "Access-Control-Allow-Origin": {
+                "type": "string"
+              }, 
+              "Access-Control-Allow-Methods": {
+                "type": "string"
+              }, 
+              "Access-Control-Allow-Headers": {
+                "type": "string"
+              }
+            }, 
+            "description": "400 response", 
+            "schema": {
+              "$ref": "#/definitions/apiTrame"
+            }
+          }
+        }
+      }, 
+      "delete": {
+        "x-amazon-apigateway-integration": {
+          "httpMethod": "POST", 
+          "contentHandling": "CONVERT_TO_TEXT", 
+          "responses": {
+            "default": {
+              "statusCode": "200", 
+              "responseParameters": {
+                "method.response.header.Access-Control-Allow-Origin": "'*'"
+              }
+            }
+          }, 
+          "passthroughBehavior": "when_no_match", 
+          "type": "aws_proxy", 
+          "uri": "arn:aws:apigateway:us-east-1:lambda:path/2015-03-31/functions/arn:aws:lambda:us-east-1:321411950107:function:ManageSlack/invocations"
+        }, 
+        "produces": [
+          "application/json"
+        ], 
+        "consumes": [
+          "application/json"
+        ], 
+        "parameters": [
+          {
+            "required": true, 
+            "type": "string", 
+            "name": "token", 
+            "in": "header"
+          }, 
+          {
+            "required": true, 
+            "in": "body", 
+            "name": "Interlocutor", 
+            "schema": {
+              "$ref": "#/definitions/Interlocutor"
+            }
+          }
+        ], 
+        "responses": {
+          "200": {
+            "headers": {
+              "Access-Control-Allow-Origin": {
+                "type": "string"
+              }, 
+              "Access-Control-Allow-Methods": {
+                "type": "string"
+              }, 
+              "Access-Control-Allow-Headers": {
+                "type": "string"
+              }
+            }, 
+            "description": "200 response", 
+            "schema": {
+              "$ref": "#/definitions/apiTrame"
+            }
+          }, 
+          "400": {
+            "headers": {
+              "Access-Control-Allow-Origin": {
+                "type": "string"
+              }, 
+              "Access-Control-Allow-Methods": {
+                "type": "string"
+              }, 
+              "Access-Control-Allow-Headers": {
+                "type": "string"
+              }
+            }, 
+            "description": "400 response", 
+            "schema": {
+              "$ref": "#/definitions/apiTrame"
+            }
+          }
+        }
+      }
+    }, 
+    "/ManageQuestions/Questions": {
+      "put": {
+        "x-amazon-apigateway-integration": {
+          "httpMethod": "POST", 
+          "contentHandling": "CONVERT_TO_TEXT", 
+          "responses": {
+            "default": {
+              "statusCode": "200", 
+              "responseParameters": {
+                "method.response.header.Access-Control-Allow-Origin": "'*'"
+              }
+            }
+          }, 
+          "passthroughBehavior": "when_no_match", 
+          "type": "aws_proxy", 
+          "uri": "arn:aws:apigateway:us-east-1:lambda:path/2015-03-31/functions/arn:aws:lambda:us-east-1:321411950107:function:ManageQuestions/invocations"
+        }, 
+        "produces": [
+          "application/json"
+        ], 
+        "consumes": [
+          "application/json"
+        ], 
+        "parameters": [
+          {
+            "required": true, 
+            "type": "string", 
+            "name": "token", 
+            "in": "header"
+          }, 
+          {
+            "required": true, 
+            "in": "body", 
+            "name": "Question", 
+            "schema": {
+              "$ref": "#/definitions/Question"
+            }
+          }
+        ], 
+        "responses": {
+          "200": {
+            "headers": {
+              "Access-Control-Allow-Origin": {
+                "type": "string"
+              }, 
+              "Access-Control-Allow-Methods": {
+                "type": "string"
+              }, 
+              "Access-Control-Allow-Headers": {
+                "type": "string"
+              }
+            }, 
+            "description": "200 response", 
+            "schema": {
+              "$ref": "#/definitions/apiTrame"
+            }
+          }, 
+          "400": {
+            "headers": {
+              "Access-Control-Allow-Origin": {
+                "type": "string"
+              }, 
+              "Access-Control-Allow-Methods": {
+                "type": "string"
+              }, 
+              "Access-Control-Allow-Headers": {
+                "type": "string"
+              }
+            }, 
+            "description": "400 response", 
+            "schema": {
+              "$ref": "#/definitions/apiTrame"
+            }
+          }
+        }
+      }, 
+      "post": {
+        "x-amazon-apigateway-integration": {
+          "httpMethod": "POST", 
+          "contentHandling": "CONVERT_TO_TEXT", 
+          "responses": {
+            "default": {
+              "statusCode": "200", 
+              "responseParameters": {
+                "method.response.header.Access-Control-Allow-Origin": "'*'"
+              }
+            }
+          }, 
+          "passthroughBehavior": "when_no_match", 
+          "type": "aws_proxy", 
+          "uri": "arn:aws:apigateway:us-east-1:lambda:path/2015-03-31/functions/arn:aws:lambda:us-east-1:321411950107:function:ManageQuestions/invocations"
+        }, 
+        "produces": [
+          "application/json"
+        ], 
+        "consumes": [
+          "application/json"
+        ], 
+        "parameters": [
+          {
+            "required": true, 
+            "type": "string", 
+            "name": "token", 
+            "in": "header"
+          }, 
+          {
+            "required": true, 
+            "in": "body", 
+            "name": "Question", 
+            "schema": {
+              "$ref": "#/definitions/Question"
+            }
+          }
+        ], 
+        "responses": {
+          "200": {
+            "headers": {
+              "Access-Control-Allow-Origin": {
+                "type": "string"
+              }, 
+              "Access-Control-Allow-Methods": {
+                "type": "string"
+              }, 
+              "Access-Control-Allow-Headers": {
+                "type": "string"
+              }
+            }, 
+            "description": "200 response", 
+            "schema": {
+              "$ref": "#/definitions/apiTrame"
+            }
+          }, 
+          "400": {
+            "headers": {
+              "Access-Control-Allow-Origin": {
+                "type": "string"
+              }, 
+              "Access-Control-Allow-Methods": {
+                "type": "string"
+              }, 
+              "Access-Control-Allow-Headers": {
+                "type": "string"
+              }
+            }, 
+            "description": "400 response", 
+            "schema": {
+              "$ref": "#/definitions/apiTrame"
+            }
+          }
+        }
+      }, 
+      "get": {
+        "x-amazon-apigateway-integration": {
+          "httpMethod": "POST", 
+          "contentHandling": "CONVERT_TO_TEXT", 
+          "responses": {
+            "default": {
+              "statusCode": "200", 
+              "responseParameters": {
+                "method.response.header.Access-Control-Allow-Origin": "'*'"
+              }
+            }
+          }, 
+          "passthroughBehavior": "when_no_match", 
+          "type": "aws_proxy", 
+          "uri": "arn:aws:apigateway:us-east-1:lambda:path/2015-03-31/functions/arn:aws:lambda:us-east-1:321411950107:function:ManageQuestions/invocations"
+        }, 
+        "responses": {
+          "200": {
+            "headers": {
+              "Access-Control-Allow-Origin": {
+                "type": "string"
+              }, 
+              "Access-Control-Allow-Methods": {
+                "type": "string"
+              }, 
+              "Access-Control-Allow-Headers": {
+                "type": "string"
+              }
+            }, 
+            "description": "200 response", 
+            "schema": {
+              "$ref": "#/definitions/apiTrame"
+            }
+          }, 
+          "400": {
+            "headers": {
+              "Access-Control-Allow-Origin": {
+                "type": "string"
+              }, 
+              "Access-Control-Allow-Methods": {
+                "type": "string"
+              }, 
+              "Access-Control-Allow-Headers": {
+                "type": "string"
+              }
+            }, 
+            "description": "400 response", 
+            "schema": {
+              "$ref": "#/definitions/apiTrame"
+            }
+          }
+        }, 
+        "parameters": [
+          {
+            "required": true, 
+            "type": "string", 
+            "name": "token", 
+            "in": "header"
+          }
+        ], 
+        "produces": [
+          "application/json"
+        ]
+      }, 
+      "options": {
+        "x-amazon-apigateway-integration": {
+          "requestTemplates": {
+            "application/json": "{\"statusCode\": 200}"
+          }, 
+          "passthroughBehavior": "when_no_match", 
+          "type": "mock", 
+          "responses": {
+            "default": {
+              "statusCode": "200", 
+              "responseParameters": {
+                "method.response.header.Access-Control-Allow-Origin": "'*'", 
+                "method.response.header.Access-Control-Allow-Methods": "'DELETE,POST,GET,PUT,OPTIONS'", 
+                "method.response.header.Access-Control-Allow-Headers": "'Content-Type,X-Amz-Date,Authorization'"
+              }
+            }
+          }
+        }, 
+        "produces": [
+          "application/json"
+        ], 
+        "consumes": [
+          "application/json"
+        ], 
+        "responses": {
+          "200": {
+            "headers": {
+              "Access-Control-Allow-Origin": {
+                "type": "string"
+              }, 
+              "Access-Control-Allow-Methods": {
+                "type": "string"
+              }, 
+              "Access-Control-Allow-Headers": {
+                "type": "string"
+              }
+            }, 
+            "description": "200 response", 
+            "schema": {
+              "$ref": "#/definitions/apiTrame"
+            }
+          }, 
+          "400": {
+            "headers": {
+              "Access-Control-Allow-Origin": {
+                "type": "string"
+              }, 
+              "Access-Control-Allow-Methods": {
+                "type": "string"
+              }, 
+              "Access-Control-Allow-Headers": {
+                "type": "string"
+              }
+            }, 
+            "description": "400 response", 
+            "schema": {
+              "$ref": "#/definitions/apiTrame"
+            }
+          }
+        }
+      }, 
+      "delete": {
+        "x-amazon-apigateway-integration": {
+          "httpMethod": "POST", 
+          "contentHandling": "CONVERT_TO_TEXT", 
+          "responses": {
+            "default": {
+              "statusCode": "200", 
+              "responseParameters": {
+                "method.response.header.Access-Control-Allow-Origin": "'*'"
+              }
+            }
+          }, 
+          "passthroughBehavior": "when_no_match", 
+          "type": "aws_proxy", 
+          "uri": "arn:aws:apigateway:us-east-1:lambda:path/2015-03-31/functions/arn:aws:lambda:us-east-1:321411950107:function:ManageQuestions/invocations"
+        }, 
+        "produces": [
+          "application/json"
+        ], 
+        "consumes": [
+          "application/json"
+        ], 
+        "parameters": [
+          {
+            "required": true, 
+            "type": "string", 
+            "name": "token", 
+            "in": "header"
+          }, 
+          {
+            "required": true, 
+            "in": "body", 
+            "name": "Question", 
+            "schema": {
+              "$ref": "#/definitions/Question"
+            }
+          }
+        ], 
+        "responses": {
+          "200": {
+            "headers": {
+              "Access-Control-Allow-Origin": {
+                "type": "string"
+              }, 
+              "Access-Control-Allow-Methods": {
+                "type": "string"
+              }, 
+              "Access-Control-Allow-Headers": {
+                "type": "string"
+              }
+            }, 
+            "description": "200 response", 
+            "schema": {
+              "$ref": "#/definitions/apiTrame"
+            }
+          }, 
+          "400": {
+            "headers": {
+              "Access-Control-Allow-Origin": {
+                "type": "string"
+              }, 
+              "Access-Control-Allow-Methods": {
+                "type": "string"
+              }, 
+              "Access-Control-Allow-Headers": {
+                "type": "string"
+              }
+            }, 
+            "description": "400 response", 
+            "schema": {
+              "$ref": "#/definitions/apiTrame"
+            }
+          }
+        }
+      }
+    }, 
+    "/ManageAuth/SendEmail": {
+      "put": {
+        "x-amazon-apigateway-integration": {
+          "httpMethod": "POST", 
+          "contentHandling": "CONVERT_TO_TEXT", 
+          "responses": {
+            "default": {
+              "statusCode": "200", 
+              "responseParameters": {
+                "method.response.header.Access-Control-Allow-Origin": "'*'"
+              }
+            }
+          }, 
+          "passthroughBehavior": "when_no_match", 
+          "type": "aws_proxy", 
+          "uri": "arn:aws:apigateway:us-east-1:lambda:path/2015-03-31/functions/arn:aws:lambda:us-east-1:321411950107:function:ManageAuth/invocations"
+        }, 
+        "produces": [
+          "application/json"
+        ], 
+        "consumes": [
+          "application/json"
+        ], 
+        "parameters": [
+          {
+            "required": true, 
+            "type": "string", 
+            "name": "token", 
+            "in": "header"
+          }, 
+          {
+            "required": true, 
+            "in": "body", 
+            "name": "RecoveryPassword", 
+            "schema": {
+              "$ref": "#/definitions/RecoveryPassword"
+            }
+          }
+        ], 
+        "responses": {
+          "200": {
+            "headers": {
+              "Access-Control-Allow-Origin": {
+                "type": "string"
+              }, 
+              "Access-Control-Allow-Methods": {
+                "type": "string"
+              }, 
+              "Access-Control-Allow-Headers": {
+                "type": "string"
+              }
+            }, 
+            "description": "200 response", 
+            "schema": {
+              "$ref": "#/definitions/apiTrame"
+            }
+          }, 
+          "400": {
+            "headers": {
+              "Access-Control-Allow-Origin": {
+                "type": "string"
+              }, 
+              "Access-Control-Allow-Methods": {
+                "type": "string"
+              }, 
+              "Access-Control-Allow-Headers": {
+                "type": "string"
+              }
+            }, 
+            "description": "400 response", 
+            "schema": {
+              "$ref": "#/definitions/apiTrame"
+            }
+          }
+        }
+      }, 
+      "options": {
+        "x-amazon-apigateway-integration": {
+          "requestTemplates": {
+            "application/json": "{\"statusCode\": 200}"
+          }, 
+          "passthroughBehavior": "when_no_match", 
+          "type": "mock", 
+          "responses": {
+            "default": {
+              "statusCode": "200", 
+              "responseParameters": {
+                "method.response.header.Access-Control-Allow-Origin": "'*'", 
+                "method.response.header.Access-Control-Allow-Methods": "'GET,OPTIONS,PUT'", 
+                "method.response.header.Access-Control-Allow-Headers": "'Content-Type,X-Amz-Date,Authorization,X-Api-Key,X-Amz-Security-Token'"
+              }
+            }
+          }
+        }, 
+        "produces": [
+          "application/json"
+        ], 
+        "consumes": [
+          "application/json"
+        ], 
+        "responses": {
+          "200": {
+            "headers": {
+              "Access-Control-Allow-Origin": {
+                "type": "string"
+              }, 
+              "Access-Control-Allow-Methods": {
+                "type": "string"
+              }, 
+              "Access-Control-Allow-Headers": {
+                "type": "string"
+              }
+            }, 
+            "description": "200 response", 
+            "schema": {
+              "$ref": "#/definitions/apiTrame"
+            }
+          }, 
+          "400": {
+            "headers": {
+              "Access-Control-Allow-Origin": {
+                "type": "string"
+              }, 
+              "Access-Control-Allow-Methods": {
+                "type": "string"
+              }, 
+              "Access-Control-Allow-Headers": {
+                "type": "string"
+              }
+            }, 
+            "description": "400 response", 
+            "schema": {
+              "$ref": "#/definitions/apiTrame"
+            }
+          }
+        }
+      }, 
+      "get": {
+        "x-amazon-apigateway-integration": {
+          "contentHandling": "CONVERT_TO_TEXT", 
+          "cacheKeyParameters": [
+            "method.request.querystring.username"
+          ], 
+          "uri": "arn:aws:apigateway:us-east-1:lambda:path/2015-03-31/functions/arn:aws:lambda:us-east-1:321411950107:function:ManageAuth/invocations", 
+          "httpMethod": "POST", 
+          "passthroughBehavior": "when_no_match", 
+          "cacheNamespace": "mernzu", 
+          "type": "aws_proxy", 
+          "responses": {
+            "default": {
+              "statusCode": "200", 
+              "responseParameters": {
+                "method.response.header.Access-Control-Allow-Origin": "'*'"
+              }
+            }
+          }
+        }, 
+        "responses": {
+          "200": {
+            "headers": {
+              "Access-Control-Allow-Origin": {
+                "type": "string"
+              }, 
+              "Access-Control-Allow-Methods": {
+                "type": "string"
+              }, 
+              "Access-Control-Allow-Headers": {
+                "type": "string"
+              }
+            }, 
+            "description": "200 response", 
+            "schema": {
+              "$ref": "#/definitions/apiTrame"
+            }
+          }, 
+          "400": {
+            "headers": {
+              "Access-Control-Allow-Origin": {
+                "type": "string"
+              }, 
+              "Access-Control-Allow-Methods": {
+                "type": "string"
+              }, 
+              "Access-Control-Allow-Headers": {
+                "type": "string"
+              }
+            }, 
+            "description": "400 response", 
+            "schema": {
+              "$ref": "#/definitions/apiTrame"
+            }
+          }
+        }, 
+        "parameters": [
+          {
+            "required": true, 
+            "type": "string", 
+            "name": "username", 
+            "in": "query"
+          }
+        ], 
+        "produces": [
+          "application/json"
+        ]
+      }
+    }, 
+    "/ManageAuth/Authentication": {
+      "put": {
+        "x-amazon-apigateway-integration": {
+          "contentHandling": "CONVERT_TO_TEXT", 
+          "cacheKeyParameters": [
+            "method.request.header.token"
+          ], 
+          "uri": "arn:aws:apigateway:us-east-1:lambda:path/2015-03-31/functions/arn:aws:lambda:us-east-1:321411950107:function:ManageAuth/invocations", 
+          "httpMethod": "POST", 
+          "passthroughBehavior": "when_no_match", 
+          "cacheNamespace": "z0sljc", 
+          "type": "aws_proxy", 
+          "responses": {
+            "default": {
+              "statusCode": "200", 
+              "responseParameters": {
+                "method.response.header.Access-Control-Allow-Origin": "'*'"
+              }
+            }
+          }
+        }, 
+        "produces": [
+          "application/json"
+        ], 
+        "consumes": [
+          "application/json"
+        ], 
+        "parameters": [
+          {
+            "required": true, 
+            "type": "string", 
+            "name": "token", 
+            "in": "header"
+          }, 
+          {
+            "required": true, 
+            "in": "body", 
+            "name": "updateAdmin", 
+            "schema": {
+              "$ref": "#/definitions/updateAdmin"
+            }
+          }
+        ], 
+        "responses": {
+          "200": {
+            "headers": {
+              "Access-Control-Allow-Origin": {
+                "type": "string"
+              }, 
+              "Access-Control-Allow-Methods": {
+                "type": "string"
+              }, 
+              "Access-Control-Allow-Headers": {
+                "type": "string"
+              }
+            }, 
+            "description": "200 response", 
+            "schema": {
+              "$ref": "#/definitions/apiTrame"
+            }
+          }, 
+          "400": {
+            "headers": {
+              "Access-Control-Allow-Origin": {
+                "type": "string"
+              }, 
+              "Access-Control-Allow-Methods": {
+                "type": "string"
+              }, 
+              "Access-Control-Allow-Headers": {
+                "type": "string"
+              }
+            }, 
+            "description": "400 response", 
+            "schema": {
+              "$ref": "#/definitions/apiTrame"
+            }
+          }
+        }
+      }, 
+      "post": {
+        "x-amazon-apigateway-integration": {
+          "httpMethod": "POST", 
+          "contentHandling": "CONVERT_TO_TEXT", 
+          "responses": {
+            "default": {
+              "statusCode": "200", 
+              "responseParameters": {
+                "method.response.header.Access-Control-Allow-Origin": "'*'"
+              }
+            }
+          }, 
+          "passthroughBehavior": "when_no_match", 
+          "type": "aws_proxy", 
+          "uri": "arn:aws:apigateway:us-east-1:lambda:path/2015-03-31/functions/arn:aws:lambda:us-east-1:321411950107:function:ManageAuth/invocations"
+        }, 
+        "produces": [
+          "application/json"
+        ], 
+        "consumes": [
+          "application/json"
+        ], 
+        "parameters": [
+          {
+            "required": true, 
+            "in": "body", 
+            "name": "updateAdmin", 
+            "schema": {
+              "$ref": "#/definitions/updateAdmin"
+            }
+          }
+        ], 
+        "responses": {
+          "200": {
+            "headers": {
+              "Access-Control-Allow-Origin": {
+                "type": "string"
+              }, 
+              "Access-Control-Allow-Methods": {
+                "type": "string"
+              }, 
+              "Access-Control-Allow-Headers": {
+                "type": "string"
+              }
+            }, 
+            "description": "200 response", 
+            "schema": {
+              "$ref": "#/definitions/apiTrame"
+            }
+          }, 
+          "400": {
+            "headers": {
+              "Access-Control-Allow-Origin": {
+                "type": "string"
+              }, 
+              "Access-Control-Allow-Methods": {
+                "type": "string"
+              }, 
+              "Access-Control-Allow-Headers": {
+                "type": "string"
+              }
+            }, 
+            "description": "400 response", 
+            "schema": {
+              "$ref": "#/definitions/apiTrame"
+            }
+          }
+        }
+      }, 
+      "get": {
+        "x-amazon-apigateway-integration": {
+          "contentHandling": "CONVERT_TO_TEXT", 
+          "cacheKeyParameters": [
+            "method.request.header.token"
+          ], 
+          "uri": "arn:aws:apigateway:us-east-1:lambda:path/2015-03-31/functions/arn:aws:lambda:us-east-1:321411950107:function:ManageAuth/invocations", 
+          "httpMethod": "POST", 
+          "passthroughBehavior": "when_no_match", 
+          "cacheNamespace": "z0sljc", 
+          "type": "aws_proxy", 
+          "responses": {
+            "default": {
+              "statusCode": "200", 
+              "responseParameters": {
+                "method.response.header.Access-Control-Allow-Origin": "'*'"
+              }
+            }
+          }
+        }, 
+        "responses": {
+          "200": {
+            "headers": {
+              "Access-Control-Allow-Origin": {
+                "type": "string"
+              }, 
+              "Access-Control-Allow-Methods": {
+                "type": "string"
+              }, 
+              "Access-Control-Allow-Headers": {
+                "type": "string"
+              }
+            }, 
+            "description": "200 response", 
+            "schema": {
+              "$ref": "#/definitions/apiTrame"
+            }
+          }, 
+          "400": {
+            "headers": {
+              "Access-Control-Allow-Origin": {
+                "type": "string"
+              }, 
+              "Access-Control-Allow-Methods": {
+                "type": "string"
+              }, 
+              "Access-Control-Allow-Headers": {
+                "type": "string"
+              }
+            }, 
+            "description": "400 response", 
+            "schema": {
+              "$ref": "#/definitions/apiTrame"
+            }
+          }
+        }, 
+        "parameters": [
+          {
+            "required": true, 
+            "type": "string", 
+            "name": "token", 
+            "in": "header"
+          }
+        ], 
+        "produces": [
+          "application/json"
+        ]
+      }, 
+      "options": {
+        "x-amazon-apigateway-integration": {
+          "requestTemplates": {
+            "application/json": "{\"statusCode\": 200}"
+          }, 
+          "passthroughBehavior": "when_no_match", 
+          "type": "mock", 
+          "responses": {
+            "default": {
+              "statusCode": "200", 
+              "responseParameters": {
+                "method.response.header.Access-Control-Allow-Origin": "'*'", 
+                "method.response.header.Access-Control-Allow-Methods": "'DELETE,POST,GET,PUT,OPTIONS'", 
+                "method.response.header.Access-Control-Allow-Headers": "'Content-Type,X-Amz-Date,Authorization'"
+              }
+            }
+          }
+        }, 
+        "produces": [
+          "application/json"
+        ], 
+        "consumes": [
+          "application/json"
+        ], 
+        "responses": {
+          "200": {
+            "headers": {
+              "Access-Control-Allow-Origin": {
+                "type": "string"
+              }, 
+              "Access-Control-Allow-Methods": {
+                "type": "string"
+              }, 
+              "Access-Control-Allow-Headers": {
+                "type": "string"
+              }
+            }, 
+            "description": "200 response", 
+            "schema": {
+              "$ref": "#/definitions/apiTrame"
+            }
+          }, 
+          "400": {
+            "headers": {
+              "Access-Control-Allow-Origin": {
+                "type": "string"
+              }, 
+              "Access-Control-Allow-Methods": {
+                "type": "string"
+              }, 
+              "Access-Control-Allow-Headers": {
+                "type": "string"
+              }
+            }, 
+            "description": "400 response", 
+            "schema": {
+              "$ref": "#/definitions/apiTrame"
+            }
+          }
+        }
+      }, 
+      "delete": {
+        "x-amazon-apigateway-integration": {
+          "httpMethod": "POST", 
+          "contentHandling": "CONVERT_TO_TEXT", 
+          "responses": {
+            "default": {
+              "statusCode": "200", 
+              "responseParameters": {
+                "method.response.header.Access-Control-Allow-Origin": "'*'"
+              }
+            }
+          }, 
+          "passthroughBehavior": "when_no_match", 
+          "type": "aws_proxy", 
+          "uri": "arn:aws:apigateway:us-east-1:lambda:path/2015-03-31/functions/arn:aws:lambda:us-east-1:321411950107:function:ManageAuth/invocations"
+        }, 
+        "responses": {
+          "200": {
+            "headers": {
+              "Access-Control-Allow-Origin": {
+                "type": "string"
+              }, 
+              "Access-Control-Allow-Methods": {
+                "type": "string"
+              }, 
+              "Access-Control-Allow-Headers": {
+                "type": "string"
+              }
+            }, 
+            "description": "200 response", 
+            "schema": {
+              "$ref": "#/definitions/apiTrame"
+            }
+          }, 
+          "400": {
+            "headers": {
+              "Access-Control-Allow-Origin": {
+                "type": "string"
+              }, 
+              "Access-Control-Allow-Methods": {
+                "type": "string"
+              }, 
+              "Access-Control-Allow-Headers": {
+                "type": "string"
+              }
+            }, 
+            "description": "400 response", 
+            "schema": {
+              "$ref": "#/definitions/apiTrame"
+            }
+          }
+        }, 
+        "parameters": [
+          {
+            "required": true, 
+            "type": "string", 
+            "name": "token", 
+            "in": "header"
+          }
+        ], 
+        "produces": [
+          "application/json"
+        ]
+      }
+    }
+  }, 
+  "schemes": [
+    "https"
+  ], 
+  "definitions": {
+    "Firm": {
+      "required": [
+        "guests", 
+        "name"
+      ], 
+      "type": "object", 
+      "properties": {
+        "name": {
+          "type": "string"
+        }, 
+        "guests": {
+          "items": {
+            "required": [
+              "name"
+            ], 
+            "type": "object", 
+            "properties": {
+              "name": {
+                "type": "string"
+              }
+            }
+          }, 
+          "type": "array"
+        }
+      }
+    }, 
+    "Interlocutor": {
+      "required": [
+        "id_slack", 
+        "joinChannel", 
+        "name"
+      ], 
+      "type": "object", 
+      "properties": {
+        "id_slack": {
+          "type": "string"
+        }, 
+        "joinChannel": {
+          "type": "boolean"
+        }, 
+        "name": {
+          "type": "string"
+        }
+      }
+    }, 
+    "Question": {
+      "required": [
+        "answers", 
+        "baseText", 
+        "dynamic", 
+        "id"
+      ], 
+      "type": "object", 
+      "properties": {
+        "baseText": {
+          "pattern": "^[a-zA-Z0-9 ?]+$", 
+          "type": "string"
+        }, 
+        "questionAction": {
+          "type": "integer"
+        }, 
+        "isFirst": {
+          "type": "boolean"
+        }, 
+        "recurrentText": {
+          "pattern": "^[a-zA-Z0-9 ?]+$", 
+          "type": "string"
+        }, 
+        "dynamic": {
+          "type": "boolean"
+        }, 
+        "id": {
+          "type": "integer"
+        }, 
+        "answers": {
+          "type": "array"
+        }
+      }, 
+      "title": "question"
+    }, 
+    "Admin": {
+      "required": [
+        "email", 
+        "password", 
+        "username"
+      ], 
+      "type": "object", 
+      "properties": {
+        "username": {
+          "pattern": "^[a-z0-9]{4,}$", 
+          "type": "string"
+        }, 
+        "password": {
+          "pattern": "^.{8,16}$", 
+          "type": "string"
+        }, 
+        "superadmin": {
+          "type": "boolean"
+        }, 
+        "email": {
+          "pattern": "^[A-Za-z0-9-_ .+%]+@[ A-Za-z0-9-.]+.[A-Za-z]{2,4}$", 
+          "type": "string"
+        }
+      }, 
+      "title": "admin"
+    }, 
+    "Action": {
+      "required": [
+        "id_action"
+      ], 
+      "type": "object", 
+      "properties": {
+        "text": {
+          "pattern": "^[a-zA-Z0-9 ]+$", 
+          "type": "string"
+        }, 
+        "id_action": {
+          "type": "integer"
+        }, 
+        "isQuestion": {
+          "type": "boolean"
+        }
+      }, 
+      "title": "action"
+    }, 
+    "apiTrame": {
+      "type": "object", 
+      "properties": {
+        "Object": {
+          "type": "object", 
+          "properties": {}
+        }, 
+        "TypeError": {
+          "type": "string"
+        }, 
+        "Error": {
+          "type": "string"
+        }
+      }
+    }, 
+    "RecoveryPassword": {
+      "required": [
+        "password", 
+        "recoveryToken"
+      ], 
+      "type": "object", 
+      "properties": {
+        "recoveryToken": {
+          "pattern": "^[a-zA-Z0-9+-]{5,30}$", 
+          "type": "string"
+        }, 
+        "password": {
+          "pattern": "^[a-zA-Z0-9]{8,16}$", 
+          "type": "string"
+        }
+      }
+    }, 
+    "updateAdmin": {
+      "required": [
+        "username"
+      ], 
+      "type": "object", 
+      "properties": {
+        "username": {
+          "pattern": "^[a-z0-9]{4,}$", 
+          "type": "string"
+        }, 
+        "password": {
+          "pattern": "^.{8,16}$", 
+          "type": "string"
+        }, 
+        "email": {
+          "pattern": "^[A-Za-z0-9-_ .+%]+@[ A-Za-z0-9-.]+.[A-Za-z]{2,4}$", 
+          "type": "string"
+        }
+      }, 
+      "title": "updateAdmin"
+    }, 
+    "Empty": {
+      "type": "object", 
+      "title": "Empty Schema"
+    }
+  }, 
+  "basePath": "/Administration", 
+  "swagger": "2.0"
+}

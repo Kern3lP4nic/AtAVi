@@ -1,0 +1,23 @@
+{
+    "title":"admin",
+    "type":"object",
+    "properties":{
+        "username": {
+            "type": "string",
+            "pattern": "^[a-z0-9]{4,}$"
+        },
+        "email": {
+            "type": "string",
+            "pattern": "^[A-Za-z0-9-_ .+%]+@[ A-Za-z0-9-.]+.[A-Za-z]{2,4}$"
+        },
+        "password": {
+            "type": "string",
+            "pattern": "^.{8,16}$"
+        },
+        "superadmin": {
+            "type": "boolean"
+        }
+    },
+    "additionalProperties": false,
+    "required":["username", "email", "password"]
+}

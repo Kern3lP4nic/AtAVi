@@ -1,0 +1,24 @@
+{
+  "name": "manageslack",
+  "version": "1.0.0",
+  "description": "ManageSlack",
+  "main": "index.js",
+  "dependencies": {
+    "ajv": "^4.11.5",
+    "aws-sdk": "^2.35.0"
+  },
+  "devDependencies": {},
+  "scripts": {
+    "test": "mocha"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+ssh://git@gitlab.com/kern3lp4nic/ManageSlack.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://gitlab.com/kern3lp4nic/ManageSlack/issues"
+  },
+  "homepage": "https://gitlab.com/kern3lp4nic/ManageSlack#README"
+}

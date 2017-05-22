@@ -1,0 +1,19 @@
+{
+  "name": "logservice",
+  "version": "1.0.0",
+  "description": "LogService",
+  "main": "LogService.js",
+  "scripts": {
+    "test": "mocha"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://gitlab.com/kern3lp4nic/logservice.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://gitlab.com/kern3lp4nic/logservice/issues"
+  },
+  "homepage": "https://gitlab.com/kern3lp4nic/logservice#README"
+}

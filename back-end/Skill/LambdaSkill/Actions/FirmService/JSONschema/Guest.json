@@ -1,0 +1,12 @@
+{
+    "title":"guest",
+    "type":"object",
+    "properties":{
+        "nameg":{
+            "type":"string",
+            "pattern":"^[a-z0-9 ]{1,25}$"
+        }
+    },
+    "additionalProperties": false,
+    "required":["nameg"]
+}

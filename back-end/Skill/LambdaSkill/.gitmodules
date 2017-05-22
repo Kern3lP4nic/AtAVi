@@ -1,0 +1,12 @@
+[submodule "Actions"]
+	path = Actions
+	url = git@gitlab.com:kern3lp4nic/Actions.git
+[submodule "QuestionService"]
+	path = QuestionService
+	url = git@gitlab.com:kern3lp4nic/QuestionService.git
+[submodule "LogService"]
+	path = LogService
+	url = git@gitlab.com:kern3lp4nic/LogService.git
+[submodule "FirmService"]
+	path = FirmService
+	url = git@gitlab.com:kern3lp4nic/firmservice.git

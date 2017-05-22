@@ -1,0 +1,10 @@
+INSTALL_DEV=false
+RESET_REPO=false
+
+AMAZON_LOGIN_ACCESS_KEY_ID=accessKeyIdTemporaneaLogin
+AMAZON_LOGIN_SECRET_ACCESS_KEY=secretAccessKeyTemporaneaLogin
+
+DATABASE_INTERACTION_KEY_ID=accessKeyIdTemporaneaDB
+DATABASE_INTERACTION_SECRET_KEY=secretAccessKeyTemporaneaDB
+
+SLACK_SECRET_KEY=slackSecretKey

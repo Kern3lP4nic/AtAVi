@@ -1,0 +1,13 @@
+.row {
+    margin: 0;
+    margin-left: 0;
+    margin-right: 0;
+}
+
+input {
+    margin-bottom: 1em;
+}
+
+.modal {
+    display: block;
+}

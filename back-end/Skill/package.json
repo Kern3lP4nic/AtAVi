@@ -1,0 +1,27 @@
+{
+  "name": "alexaskill-Speechtotext",
+  "version": "0.0.1",
+  "description": "Alexa skill extracting text from audio and capable do http calls",
+  "author": "bertof",
+  "license": "MIT",
+  "homepage": "https://github.com/Kern3lP4nic/AlexaSkill-SpeechToText#readme",
+  "main": "index.js",
+  "scripts": {
+    "test": "mocha"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/Kern3lP4nic/AlexaSkill-SpeechToText"
+  },
+  "dependencies": {
+    "alexa-app": "^4.0.0",
+    "request-promise": "^4.1.1"
+  },
+  "devDependencies": {
+    "chai": "^3.5.0",
+    "mocha": "^3.2.0"
+  },
+  "alexa": {
+    "applicationId": "amzn1.echo-sdk-ams.app.999999-d0ed-9999-ad00-999999d00eba"
+  }
+}

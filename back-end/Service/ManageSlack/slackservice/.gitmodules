@@ -1,0 +1,6 @@
+[submodule "DatabaseInteraction"]
+	path = DatabaseInteraction
+	url = git@gitlab.com:kern3lp4nic/databaseinteraction.git
+[submodule "Slack"]
+	path = Slack
+	url = git@gitlab.com:kern3lp4nic/Slack.git

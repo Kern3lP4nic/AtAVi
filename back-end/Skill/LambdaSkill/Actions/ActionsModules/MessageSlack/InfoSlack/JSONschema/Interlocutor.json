@@ -1,0 +1,19 @@
+{
+    "title": "interlocutor",
+    "type": "object",
+    "properties": {
+        "id_slack": {
+            "type": "string",
+            "pattern": "^[a-zA-Z0-9 ]{1,50}$"
+        },
+        "isDefault": {
+            "type": "boolean"
+        },        
+        "nameI": {
+            "type": "string",
+            "pattern": "^[a-zA-Z0-9 ]{1,50}$"
+        }
+    },
+    "additionalProperties": false,
+    "required":["id_slack", "isDefault","nameI"]
+}

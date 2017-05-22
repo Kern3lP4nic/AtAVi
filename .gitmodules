@@ -1,0 +1,24 @@
+[submodule "back-end/Service/AmazonGetCode"]
+    path = back-end/Service/AmazonGetCode
+    url = git@gitlab.com:kern3lp4nic/AmazonGetCode.git
+[submodule "back-end/Service/AmazonRefreshToken"]
+    path = back-end/Service/AmazonRefreshToken
+	url = git@gitlab.com:kern3lp4nic/AmazonRefreshToken.git
+[submodule "back-end/Skill"]
+	path = back-end/Skill
+	url = git@gitlab.com:kern3lp4nic/AlexaSkill-SpeechToText.git
+[submodule "back-end/Service/ManageAdmin"]
+    path = back-end/Service/ManageAdmin
+	url = git@gitlab.com:kern3lp4nic/LambdaManageAdmin.git
+[submodule "back-end/Service/ManageAuth"]
+    path = back-end/Service/ManageAuth
+	url = git@gitlab.com:kern3lp4nic/authservice.git
+[submodule "back-end/Service/ManageFirm"]
+    path = back-end/Service/ManageFirm
+	url = git@gitlab.com:kern3lp4nic/ManageFirm.git
+[submodule "back-end/Service/ManageQuestion"]
+    path = back-end/Service/ManageQuestion
+	url = git@gitlab.com:kern3lp4nic/ManageQuestion.git
+[submodule "back-end/Service/ManageSlack"]
+    path = back-end/Service/ManageSlack
+	url = git@gitlab.com:kern3lp4nic/ManageSlack.git

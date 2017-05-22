@@ -1,0 +1,45 @@
+<div class="row" xmlns="http://www.w3.org/1999/html">
+
+    <div class="col-md-8 col-md-offset-2" id="accordion">
+
+        <div *ngFor="let firm of firmArray; let i = index;" class="panel panel-default">
+
+            <div class="panel-heading">
+                <h4 class="panel-title">
+                    <span class="glyphicon glyphicon-object-align-bottom" aria-hidden="true"></span>
+                    <a data-toggle="collapse" href="#{{i}}" (click)="showGuests($event)" data-parent="#accordion">
+                        {{firm.getName()}}
+                    </a>
+                </h4>
+            </div>
+
+            <div id="{{i}}" class="panel-collapse collapse">
+                <div *ngFor="let guest of firm.getGuests(); let j = index;" class="panel-body">
+                    <span class="glyphicon glyphicon-user" aria-hidden="true"></span>
+                    <a data-toggle="collapse" href="#{{i}}{{j}}" (click)="showLogs($event, firm, guest)">
+                        {{guest.getName()}}
+                    </a>
+
+                    <div id="{{i}}{{j}}" class="panel-collapse collapse">
+                        <div *ngFor="let log of logs; let x = index;">
+                            <span class="glyphicon glyphicon-time" aria-hidden="true"></span>
+                            <a data-toggle="collapse" href="#{{i}}{{j}}{{x}}" (click)="showConversation($event, log)">
+                                {{log.getTimestamp()}}
+                            </a>
+
+                            <div id="{{i}}{{j}}{{x}}" class="panel-collapse collapse">
+                                <p><span class="label label-primary">{{log.getQuestion()}}</span></p>
+                                <p><span class="label label-default">{{log.getAnswer()}}</span></p>
+                            </div>
+
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+
+        </div>
+
+    </div>
+
+</div>

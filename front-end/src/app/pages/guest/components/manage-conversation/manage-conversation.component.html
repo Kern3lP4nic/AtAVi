@@ -1,0 +1,10 @@
+<div id="main">
+    <div id="loader-wrapper" (click)="onLoaderClick()">
+        <img #loaderImage src="assets/mic.png">
+        <div #loader id="loader" [ngClass]="isRecordingCss"></div>
+    </div>
+
+    <p>{{status}}</p>
+</div>
+
+<button (click)="download()">Download</button>

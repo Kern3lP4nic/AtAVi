@@ -1,0 +1,18 @@
+{
+	"title": "action",
+	"type": "object",
+    "properties":{
+        "id_action": {
+            "type": "integer"
+        },
+        "text": {
+            "type": "string",
+            "pattern": "^[a-zA-Z0-9 ]+$"
+        },
+        "isQuestion":{
+            "type":"boolean"
+        }
+    },
+    "additionalProperties": false,
+	"required": ["id_action"]
+}

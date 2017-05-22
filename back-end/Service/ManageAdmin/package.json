@@ -1,0 +1,25 @@
+{
+  "name": "lambdamanagefirm",
+  "version": "1.0.0",
+  "description": "LamdaManageFirm",
+  "main": "index.js",
+  "scripts": {
+    "test": "mocha"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Kern3lP4nic/ManageFirm.git"
+  },
+  "author": "kp",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/Kern3lP4nic/ManageFirm/issues"
+  },
+  "homepage": "https://github.com/Kern3lP4nic/ManageFirm#readme",
+  "dependencies": {
+    "ajv": "^4.11.5",
+    "aws-sdk": "^2.30.0",
+    "mocha": "^3.2.0",
+    "nodemailer": "^4.0.1"
+  }
+}
